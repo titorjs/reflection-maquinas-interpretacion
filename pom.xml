@@ -4,6 +4,28 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version> <!-- La última versión disponible -->
+                <executions>
+                    <execution>
+                        <id>ejecutar-clase</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>org.ours.Main</mainClass>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
     <groupId>org.example</groupId>
     <artifactId>reflection-maquinas-interpretacion</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -15,11 +37,11 @@
     </properties>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all -->
         <dependency>
-            <groupId>org.codehaus.groovy</groupId>
+            <groupId>org.apache.groovy</groupId>
             <artifactId>groovy-all</artifactId>
-            <version>3.0.21</version>
+            <version>4.0.21</version>
+            <type>pom</type>
         </dependency>
     </dependencies>
 
